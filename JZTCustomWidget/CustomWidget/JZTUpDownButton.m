@@ -15,7 +15,6 @@
 
 @property (nonatomic, strong, readwrite) UILabel *titleLabel;
 @property (nonatomic, strong) JZTBadgeButton *badgeBtn;//
-@property (nonatomic, strong) NSCache *imageCache;//
 @end
 
 @implementation JZTUpDownButton
@@ -24,7 +23,6 @@
         _imageTopSpace = 0.;
         _imageTextSpace = 8.;
         _textBottomSpace = 0.;
-        _imageCache = [[NSCache alloc]init];
         [self __setupUI];
     }
     return self;
@@ -44,15 +42,25 @@
 }
 
 - (void)__layout{
-    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
         make.top.equalTo(self).offset(self.imageTopSpace);
     }];
     
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.bottom.equalTo(self).offset(-self.textBottomSpace);
     }];
+}
+
+- (void)setImageTopSpace:(CGFloat)imageTopSpace{
+    _imageTopSpace = imageTopSpace;
+    [self __layout];
+}
+
+- (void)setTextBottomSpace:(CGFloat)textBottomSpace{
+    _textBottomSpace = textBottomSpace;
+    [self __layout];
 }
 
 - (void)setBadgeValue:(NSString *)badgeValue{

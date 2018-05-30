@@ -18,5 +18,4 @@
 ///角标
 @property (nonatomic, strong) NSString *badgeValue;
 
-- (void)setImage:(UIImage *)image forState:(UIControlState)state; 
 @end
