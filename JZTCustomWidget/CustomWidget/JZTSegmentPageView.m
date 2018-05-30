@@ -103,20 +103,20 @@
         _isAdapteNavigationBar = YES;
         _topSpace              = _isAdapteNavigationBar ?(([[UIApplication sharedApplication]statusBarFrame].size.height) + 44) : [[UIApplication sharedApplication]statusBarFrame].size.height;
         _font = _font?_font:[UIFont systemFontOfSize:14];
+        _currentPage = currentIndex;
         [self addSubview:self.scrollView];
         [self addSubview:self.topTabView];
-        [self addSubview:self.topTabScrollView];
-        self.currentPage = currentIndex;
-        [self.scrollView setContentOffset:CGPointMake(_selfFrame.size.width * currentIndex, 0) animated:NO];
-        [self updateSelectedPage:self.currentPage];
+        [self addSubview:self.topTabScrollView]; 
     }
     return self;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    _viewController = [self findViewController:self];
-    _viewController.automaticallyAdjustsScrollViewInsets = NO;
+    self.viewController.automaticallyAdjustsScrollViewInsets = NO;
+    self.currentPage = _currentPage;
+    [self.scrollView setContentOffset:CGPointMake(_selfFrame.size.width * _currentPage, 0) animated:NO];
+    [self updateSelectedPage:self.currentPage];
 }
 
 #pragma mark - lazy
@@ -355,16 +355,20 @@
     }
 }
 
-- (UIViewController *)findViewController:(UIView *)sourceView
+- (UIViewController *)viewController
 {
-    id target = sourceView;
-    while (target) {
-        target = ((UIResponder *)target).nextResponder;
-        if ([target isKindOfClass:[UIViewController class]]) {
-            break;
+    if (!_viewController){
+        id target = self;
+        while (target) {
+            target = ((UIResponder *)target).nextResponder;
+            if ([target isKindOfClass:[UIViewController class]]) {
+                break;
+            }
         }
+        _viewController = target;
     }
-    return target;
+    return _viewController;
+
 }
 
 - (BOOL)getVariableWithClass:(Class)myClass varName:(NSString *)name{
@@ -456,7 +460,7 @@
                 [self.scrollView addSubview:viewController.view];
                 _viewControllers[page] = @"JZTPAGEVIEW_AlreadyCreated";
                 
-                [_viewController addChildViewController:viewController];
+                [self.viewController addChildViewController:viewController];
             }
         }
     }
