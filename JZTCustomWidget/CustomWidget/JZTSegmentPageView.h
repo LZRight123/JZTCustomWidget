@@ -13,11 +13,10 @@
 - (void)JZTSegmentPageViewDidScroll:(JZTSegmentPageView *)pageView;
 @end
 
-@interface JZTSegmentPageView : UIScrollView
+@interface JZTSegmentPageView : UIView
 @property (strong, nonatomic, readonly) NSMutableArray *strongArray;
-
-@property (strong, nonatomic, readonly) UIView         *topTabView;
-// Personalized configuration properties
+@property (assign, nonatomic, readonly) NSInteger currentPage;
+// 个性化配置属性
 @property (nonatomic, strong) UIFont *font;
 @property (nonatomic, strong) UIColor *selectedColor;
 @property (nonatomic, strong) UIColor *unselectedColor;
@@ -25,43 +24,30 @@
 @property (nonatomic, assign) CGFloat leftSpace;
 @property (nonatomic, assign) CGFloat rightSpace;
 @property (nonatomic, assign) CGFloat minSpace;
-/**
- default status bar height
- */
+///横向滚动条距离上方距离
 @property (nonatomic, assign) CGFloat topSpace;
+///default YES
+@property (nonatomic, assign) BOOL isAdapteNavigationBar;
+///default NO.
+@property (nonatomic, assign) BOOL isAnimated;
+///default NO.
+@property (nonatomic, assign) BOOL isTranslucent;
+///default YES
+@property (nonatomic, assign) BOOL isAverage;
 @property (nonatomic, strong) UIButton *leftButton;
 @property (nonatomic, strong) UIButton *rightButton;
 
 @property (nonatomic, weak  ) id<JZTSegmentPageViewDelegate> delegate;
 
 /**
- default YES.
- */
-@property (nonatomic, assign) BOOL isAdapteNavigationBar;
-/**
- default NO.
- */
-@property (nonatomic, assign) BOOL isAnimated;
-/**
- default NO.
- */
-@property (nonatomic, assign) BOOL isTranslucent;
-/**
- default YES ,Valid when only one page can be filled with all buttons
- */
-@property (nonatomic, assign) BOOL isAverage;
-
-/**
- Initializes and returns a newly allocated view object with the specified frame rectangle.
- 
  @param frame       ...
- @param titles      Some title
- @param controllers Name of some controllers
- @param parameters  You need to set a property called "parameter" for your controller to receive.
- 
+ @param titles      all titles
+ @param controllers all controllers name
+ @param beginIndex  开始的位置下标
+ @param parameters  您需要设置一个名为“参数”的属性，以便控制器接收。
  @return self
  */
-- (instancetype)initWithFrame:(CGRect)frame withTitles:(NSArray *)titles withViewControllers:(NSArray *)controllers loadAtIndex:(NSInteger)currentIndex withParameters:(NSArray *)parameters;
+- (instancetype)initWithFrame:(CGRect)frame withTitles:(NSArray *)titles withViewControllers:(NSArray *)controllers loadAtIndex:(NSInteger)beginIndex withParameters:(NSArray *)parameters;
 - (void)setupPageAtIndex:(NSInteger)index;
 
 - (void)setbadgeValue:(NSString *)value atIndex:(NSInteger)index;

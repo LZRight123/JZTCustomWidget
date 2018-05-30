@@ -17,35 +17,31 @@
 #import <objc/runtime.h>
 #import "JZTBadgeButton.h"
 @interface JZTSegmentPageView () <UIScrollViewDelegate>
-
-@property (strong, nonatomic, readwrite) UIView         *topTabView;
+@property (strong, nonatomic, readwrite) NSMutableArray *strongArray;
+@property (assign, nonatomic, readwrite) NSInteger currentPage;
+@property (strong, nonatomic) UIView *topTabView;
 @property (strong, nonatomic) UIScrollView   *topTabScrollView;
 @property (strong, nonatomic) UIScrollView   *scrollView;
-@property (assign, nonatomic) NSInteger      currentPage;
-@property (strong, nonatomic, readwrite) NSMutableArray *strongArray;
-@property (weak, nonatomic) UIViewController *viewController;
-
+@property (nonatomic, weak  ) UIViewController *viewController;
 @property (nonatomic, strong) NSMutableArray *titleButtons;
 @property (nonatomic, strong) UIView         *lineBottom;
+
+@property (nonatomic, assign) CGRect selfFrame;
+@property (nonatomic, assign) CGFloat topTabScrollViewWidth;
+@property (nonatomic, strong) NSArray<NSString *> *titles;
+@property (nonatomic, strong) NSMutableArray *viewControllers;
+@property (nonatomic, strong) NSArray *parameters;
+///顶部topTabScrollView数据
+@property (nonatomic, strong) NSMutableArray *titleSizeArray;
+@property (nonatomic, strong) NSMutableArray *centerPoints;
+@property (nonatomic, strong) NSMutableArray *width_k_array;
+@property (nonatomic, strong) NSMutableArray *width_b_array;
+@property (nonatomic, strong) NSMutableArray *point_k_array;
+@property (nonatomic, strong) NSMutableArray *point_b_array;
+
 @end
 
-@implementation JZTSegmentPageView{
-    
-    CGRect _selfFrame;
-    NSInteger _topTabScrollViewWidth;
-    
-    NSArray        <NSString *> *_titles;
-    NSMutableArray *_viewControllers;
-    NSArray        *_parameters;
-    NSMutableArray *_titleSizeArray;
-    NSMutableArray *_centerPoints;
-    
-    NSMutableArray *_width_k_array;
-    NSMutableArray *_width_b_array;
-    NSMutableArray *_point_k_array;
-    NSMutableArray *_point_b_array;
-}
-
+@implementation JZTSegmentPageView
 - (void)dealloc{
     [self removeObserver:self forKeyPath:@"currentPage"];
 }
@@ -74,19 +70,13 @@
         badgeBtn.addWidths = @[@10., @13., @25.];
         badgeBtn.badgeValue = value;
         badgeBtn.center = CGPointMake(CGRectGetWidth(supBtn.bounds), CGRectGetMinY(supBtn.titleLabel.frame));
-//        [badgeBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.centerX.equalTo(supBtn.titleLabel.mas_right);
-//            make.centerY.equalTo(supBtn.titleLabel.mas_top);
-//            make.size.mas_equalTo(CGSizeMake(CGRectGetWidth(badgeBtn.frame), CGRectGetHeight(badgeBtn.frame)));
-//        }];
     }
 }
 #pragma mark - Initializes Method
-- (instancetype)initWithFrame:(CGRect)frame withTitles:(NSArray *)titles withViewControllers:(NSArray *)controllers loadAtIndex:(NSInteger)currentIndex withParameters:(NSArray *)parameters{
+- (instancetype)initWithFrame:(CGRect)frame withTitles:(NSArray *)titles withViewControllers:(NSArray *)controllers loadAtIndex:(NSInteger)beginIndex withParameters:(NSArray *)parameters{
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.scrollsToTop      = NO;
         _selfFrame             = frame;
         _selectedColor         = [UIColor colorWithRed:255.0f/255.0f green:75.0f/255.0f blue:39.0f/255.0f alpha:1.0f];
         _unselectedColor       = [UIColor colorWithRed:78.0f/255.0f green:78.0f/255.0f blue:78.0f/255.0f alpha:1.0f];
@@ -102,18 +92,27 @@
         _isAnimated            = NO;
         _isAdapteNavigationBar = YES;
         _topSpace              = _isAdapteNavigationBar ?(([[UIApplication sharedApplication]statusBarFrame].size.height) + 44) : [[UIApplication sharedApplication]statusBarFrame].size.height;
-        _font = _font?_font:[UIFont systemFontOfSize:14];
-        _currentPage = currentIndex;
-        [self addSubview:self.scrollView];
-        [self addSubview:self.topTabView];
-        [self addSubview:self.topTabScrollView]; 
+        _font = [UIFont systemFontOfSize:14];
+        _currentPage = beginIndex;
     }
     return self;
 }
 
-- (void)layoutSubviews{
-    [super layoutSubviews];
+- (void)willMoveToSuperview:(UIView *)newSuperview{
+    [super willMoveToSuperview:newSuperview];
+    if (!newSuperview) return;
+    self.viewController = [self findViewControllerWithView:newSuperview];
     self.viewController.automaticallyAdjustsScrollViewInsets = NO;
+}
+
+- (void)didMoveToSuperview{
+    [super didMoveToSuperview];
+    
+    if (!self.superview) return;
+    [self addSubview:self.scrollView];
+    [self addSubview:self.topTabView];
+    [self addSubview:self.topTabScrollView];
+    
     self.currentPage = _currentPage;
     [self.scrollView setContentOffset:CGPointMake(_selfFrame.size.width * _currentPage, 0) animated:NO];
     [self updateSelectedPage:self.currentPage];
@@ -316,7 +315,7 @@
     
     _lineBottom.center = CGPointMake([self getTitleWidth:contentOffsetX], _lineBottom.center.y);
     _lineBottom.bounds = CGRectMake(0, 0, [self getTitlePoint:contentOffsetX], LINEBOTTOM_HEIGHT);
-
+    
     CGFloat page = (NSInteger)((contentOffsetX + _selfFrame.size.width / 2) / _selfFrame.size.width);
     [self updateSelectedPage:page];
     
@@ -338,7 +337,7 @@
             if (_isAnimated) {
                 [UIView animateWithDuration:0.3 animations:^{
                     button.transform = CGAffineTransformMakeScale(1.2, 1.2);
-                    _lineBottom.transform = CGAffineTransformMakeScale(1.2, 1.2);
+                    self.lineBottom.transform = CGAffineTransformMakeScale(1.2, 1.2);
                 }];
             }
         }else{
@@ -355,45 +354,13 @@
     }
 }
 
-- (UIViewController *)viewController
-{
-    if (!_viewController){
-        id target = self;
-        while (target) {
-            target = ((UIResponder *)target).nextResponder;
-            if ([target isKindOfClass:[UIViewController class]]) {
-                break;
-            }
-        }
-        _viewController = target;
-    }
-    return _viewController;
-
-}
-
-- (BOOL)getVariableWithClass:(Class)myClass varName:(NSString *)name{
-    unsigned int outCount, i;
-    Ivar *ivars = class_copyIvarList(myClass, &outCount);
-    for (i = 0; i < outCount; i++) {
-        Ivar property = ivars[i];
-        NSString *keyName = [NSString stringWithCString:ivar_getName(property) encoding:NSUTF8StringEncoding];
-        keyName = [keyName stringByReplacingOccurrencesOfString:@"_" withString:@""];
-        if ([keyName isEqualToString:name]) {
-            free(ivars);
-            return YES;
-        }
-    }
-    free(ivars);
-    return NO;
-}
-
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:@"currentPage"]) {
         NSInteger page = [change[@"new"] integerValue];
         CGFloat offset = [_centerPoints[page] floatValue];
         if (_topTabScrollView.contentSize.width <= _selfFrame.size.width) {
-
+            
         }else if (offset < _topTabScrollViewWidth/2) {
             [_topTabScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
         }else if(offset+_topTabScrollViewWidth/2 <_topTabScrollView.contentSize.width) {
@@ -464,6 +431,35 @@
             }
         }
     }
+}
+
+#pragma mark -
+#pragma mark - helper
+- (UIViewController *)findViewControllerWithView:(UIView *)view{
+    id target = view;
+    while (target) {
+        target = ((UIResponder *)target).nextResponder;
+        if ([target isKindOfClass:[UIViewController class]]) {
+            break;
+        }
+    }
+    return target;
+}
+
+- (BOOL)getVariableWithClass:(Class)myClass varName:(NSString *)name{
+    unsigned int outCount, i;
+    Ivar *ivars = class_copyIvarList(myClass, &outCount);
+    for (i = 0; i < outCount; i++) {
+        Ivar property = ivars[i];
+        NSString *keyName = [NSString stringWithCString:ivar_getName(property) encoding:NSUTF8StringEncoding];
+        keyName = [keyName stringByReplacingOccurrencesOfString:@"_" withString:@""];
+        if ([keyName isEqualToString:name]) {
+            free(ivars);
+            return YES;
+        }
+    }
+    free(ivars);
+    return NO;
 }
 
 @end

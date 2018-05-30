@@ -26,6 +26,7 @@
 		DF90D46520BE38AB001F495F /* JZTScanReadImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF90D45620BE38AB001F495F /* JZTScanReadImageVC.m */; };
 		DF90D46620BE38AB001F495F /* JZTAspectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF90D45920BE38AB001F495F /* JZTAspectProxy.m */; };
 		DF90D46820BE38B8001F495F /* JZTCustomWidget.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DF90D46720BE38B7001F495F /* JZTCustomWidget.podspec */; };
+		DFF9079020BE994300F58E88 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF9078F20BE994300F58E88 /* OneViewController.m */; };
 		E5C0155A65A82FE86664283A /* Pods_JZTCustomWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39641427190049D2194478CD /* Pods_JZTCustomWidget.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		DF90D45820BE38AB001F495F /* JZTUpDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZTUpDownButton.h; sourceTree = "<group>"; };
 		DF90D45920BE38AB001F495F /* JZTAspectProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTAspectProxy.m; sourceTree = "<group>"; };
 		DF90D46720BE38B7001F495F /* JZTCustomWidget.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = JZTCustomWidget.podspec; path = ../../JZTCustomWidget.podspec; sourceTree = "<group>"; };
+		DFF9078E20BE994300F58E88 /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		DFF9078F20BE994300F58E88 /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				DF90D42820BE36CA001F495F /* AppDelegate.m */,
 				DF90D42A20BE36CA001F495F /* ViewController.h */,
 				DF90D42B20BE36CA001F495F /* ViewController.m */,
+				DFF9078E20BE994300F58E88 /* OneViewController.h */,
+				DFF9078F20BE994300F58E88 /* OneViewController.m */,
 				DF90D42D20BE36CA001F495F /* Main.storyboard */,
 				DF90D43020BE36CC001F495F /* Assets.xcassets */,
 				DF90D43220BE36CC001F495F /* LaunchScreen.storyboard */,
@@ -312,6 +317,7 @@
 				DF90D45C20BE38AB001F495F /* JZTNormalTransitioningAnimate.m in Sources */,
 				DF90D45D20BE38AB001F495F /* JZTBadgeButton.m in Sources */,
 				DF90D46520BE38AB001F495F /* JZTScanReadImageVC.m in Sources */,
+				DFF9079020BE994300F58E88 /* OneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

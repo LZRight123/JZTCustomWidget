@@ -123,7 +123,7 @@
 {
     CGRect frame = CGRectZero;
     NSString *text = self.currentTitle;
-    CGSize labelSize = [text sizeWithAttributes:@{NSFontAttributeName : self.font}];
+    CGSize labelSize = [text sizeWithAttributes:@{NSFontAttributeName : self.titleLabel.font}];
     CGFloat labelWidth = labelSize.width;
     CGFloat labelHeight = labelSize.height;
     

@@ -22,11 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnw-tE-XPb">
-                                <rect key="frame" x="122" y="125" width="46" height="30"/>
+                                <rect key="frame" x="129" y="125" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="scan"/>
+                                <connections>
+                                    <action selector="sfsaf:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jyi-7s-RiQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oh-Gg-cPu">
+                                <rect key="frame" x="156" y="301" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="sfsaf:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jyi-7s-RiQ"/>
+                                    <segue destination="B7P-61-gFx" kind="presentation" id="72R-xh-D0f"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -35,6 +43,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--One View Controller-->
+        <scene sceneID="QZS-Qc-emT">
+            <objects>
+                <viewController id="B7P-61-gFx" customClass="OneViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xYI-1i-yGF"/>
+                        <viewControllerLayoutGuide type="bottom" id="9hz-w9-U1S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="70K-lG-E7W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udD-GO-QLf">
+                                <rect key="frame" x="40" y="62" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="back:" destination="B7P-61-gFx" eventType="touchUpInside" id="xSn-Mb-k2T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACb-k7-nXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1414" y="92"/>
         </scene>
     </scenes>
 </document>
