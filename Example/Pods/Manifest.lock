@@ -1,16 +1,21 @@
 PODS:
+  - JZTCustomWidget (1.0.0):
+    - Masonry
   - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - JZTCustomWidget
   - Masonry
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - JZTCustomWidget
     - Masonry
 
 SPEC CHECKSUMS:
+  JZTCustomWidget: 68c4ad0317b87c1224fe71af879e80d1d078565d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 04523af2437e940305a14b8f5c52e99e074319b8
+PODFILE CHECKSUM: 651118807c686db3ec65c1a303945c7158e8e8e0
 
 COCOAPODS: 1.5.2

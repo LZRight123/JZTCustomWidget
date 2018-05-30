@@ -11,8 +11,6 @@
 #import <Masonry/Masonry.h>
 @interface JZTUpDownButton()
 @property (nonatomic, strong, readwrite) UIImageView *imageView;
-
-
 @property (nonatomic, strong, readwrite) UILabel *titleLabel;
 @property (nonatomic, strong) JZTBadgeButton *badgeBtn;//
 @property (nonatomic, strong) NSCache *imageCache;//
@@ -21,9 +19,7 @@
 @implementation JZTUpDownButton
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        _imageTopSpace = 0.;
-        _imageTextSpace = 8.;
-        _textBottomSpace = 0.;
+        _space = 8.;
         _imageCache = [[NSCache alloc]init];
         [self __setupUI];
     }
@@ -31,9 +27,7 @@
 }
 
 - (CGSize)intrinsicContentSize{
-    CGFloat width = MAX(51, self.imageView.image.size.width);
-    CGFloat height = self.imageTopSpace + self.imageView.image.size.height + self.imageTextSpace + 20 + self.textBottomSpace;
-    return CGSizeMake(width, height);
+    return CGSizeMake(MAX(51, self.imageView.image.size.width), self.imageView.image.size.height + 20 + self.space);
 }
 
 - (void)__setupUI{
@@ -46,13 +40,22 @@
 - (void)__layout{
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self).offset(self.imageTopSpace);
+        make.top.equalTo(self).offset(12);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
-        make.bottom.equalTo(self).offset(-self.textBottomSpace);
+        make.bottom.equalTo(self);
     }];
+}
+
+- (void)setSpace:(CGFloat)space{
+    _space = space;
+//    [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.equalTo(self);
+//        make.top.equalTo(self.imageView.mas_bottom).offset(self.space);
+//        make.bottom.equalTo(self);
+//    }];
 }
 
 - (void)setBadgeValue:(NSString *)badgeValue{

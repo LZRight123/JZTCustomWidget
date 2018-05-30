@@ -11,11 +11,8 @@
 @interface JZTUpDownButton : UIControl
 @property (nonatomic, strong, readonly) UIImageView *imageView;
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
-///间隙
-@property (nonatomic, assign) CGFloat imageTopSpace;
-@property (nonatomic, assign) CGFloat imageTextSpace;
-@property (nonatomic, assign) CGFloat textBottomSpace;
-///角标
+///图片文字间隙
+@property (nonatomic, assign) CGFloat space;
 @property (nonatomic, strong) NSString *badgeValue;
 
 - (void)setImage:(UIImage *)image forState:(UIControlState)state; 

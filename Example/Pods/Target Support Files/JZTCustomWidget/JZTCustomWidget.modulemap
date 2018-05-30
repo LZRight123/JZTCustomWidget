@@ -1,0 +1,6 @@
+framework module JZTCustomWidget {
+  umbrella header "JZTCustomWidget-umbrella.h"
+
+  export *
+  module * { export * }
+}
