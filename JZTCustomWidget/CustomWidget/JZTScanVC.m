@@ -76,10 +76,13 @@
     _output = [[AVCaptureMetadataOutput alloc]init];
     [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
-    CGFloat x = CGRectGetMinY(self.scanRect) / ScreenHeight;
-    CGFloat y = CGRectGetMinX(self.scanRect) / ScreenWidth;
-    CGFloat width = CGRectGetWidth(self.scanRect) / ScreenWidth;
-    CGFloat height = CGRectGetHeight(self.scanRect) / ScreenHeight;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    
+    CGFloat x = CGRectGetMinY(self.scanRect) / screenHeight;
+    CGFloat y = CGRectGetMinX(self.scanRect) / screenWidth;
+    CGFloat width = CGRectGetWidth(self.scanRect) / screenWidth;
+    CGFloat height = CGRectGetHeight(self.scanRect) / screenHeight;
     _output.rectOfInterest = CGRectMake(y, x, height, width);
     
     _session = [[AVCaptureSession alloc]init];

@@ -7,6 +7,7 @@
 //
 
 #import "JZTToolbar.h"
+#import <Masonry/Masonry.h>
 @interface JZTToolbar()
 @property (nonatomic, strong) UIVisualEffectView *effectView;
 @property (nonatomic, strong) UIImageView *backgroundImgView;

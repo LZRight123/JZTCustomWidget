@@ -31,7 +31,7 @@
         [[transitionContext containerView]addSubview:self.maskView];
         [[transitionContext containerView]addSubview:presentedView];
 //        presentedView.frame = newFrame;
-        presentedView.transform = CGAffineTransformMakeTranslation(0, -ScreenHeight);
+        presentedView.transform = CGAffineTransformMakeTranslation(0, -[UIScreen mainScreen].bounds.size.height);
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             presentedView.transform = CGAffineTransformIdentity;
             self.maskView.alpha = 0.5;
@@ -40,7 +40,7 @@
         }];
     }else{
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-            [transitionContext viewForKey:UITransitionContextFromViewKey].transform = CGAffineTransformMakeTranslation(0, -ScreenHeight);
+            [transitionContext viewForKey:UITransitionContextFromViewKey].transform = CGAffineTransformMakeTranslation(0, -[UIScreen mainScreen].bounds.size.height);
             self.maskView.alpha = 0;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:finished];

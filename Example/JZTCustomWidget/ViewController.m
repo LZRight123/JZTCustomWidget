@@ -7,12 +7,21 @@
 //
 
 #import "ViewController.h"
-
+#import "JZTScanVC.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+- (IBAction)sfsaf:(id)sender {
+    
+    JZTScanVC *nextVC = [[JZTScanVC alloc]init];
+    [self presentViewController:nextVC animated:YES completion:nil] ;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [nextVC openPhotoLibrary];
+    });
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

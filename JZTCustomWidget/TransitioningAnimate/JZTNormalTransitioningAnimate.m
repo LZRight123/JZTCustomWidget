@@ -15,7 +15,6 @@
 @end
 
 @implementation JZTNormalTransitioningAnimate
-
 + (instancetype)sharedAnimate {
     static JZTNormalTransitioningAnimate *animate = nil;
     static dispatch_once_t onceToken;
@@ -47,7 +46,7 @@
         [[transitionContext containerView] addSubview:self.maskView];
         [[transitionContext containerView] addSubview:toViewController.view];
         
-        toViewController.view.transform = CGAffineTransformMakeTranslation(0, ScreenHeight);
+        toViewController.view.transform = CGAffineTransformMakeTranslation(0, [UIScreen mainScreen].bounds.size.height);
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             toViewController.view.transform = CGAffineTransformIdentity;
@@ -57,7 +56,7 @@
         }];
     } else {
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-            fromViewController.view.transform = CGAffineTransformMakeTranslation(0, ScreenHeight);
+            fromViewController.view.transform = CGAffineTransformMakeTranslation(0, [UIScreen mainScreen].bounds.size.height);
             self.maskView.alpha = 0;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:finished];

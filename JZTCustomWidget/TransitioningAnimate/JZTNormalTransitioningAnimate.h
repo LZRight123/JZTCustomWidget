@@ -6,8 +6,7 @@
 //  Copyright © 2017年 梁泽. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 @interface JZTNormalTransitioningAnimate : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 @property (nonatomic, strong, readonly) UIView *maskView;
 @property (nonatomic, strong) NSNumber *transitionDuration;

@@ -7,23 +7,19 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'JZTPerformanceMonitor'
-  s.version          = '1.1.1'
-  s.summary          = 'JZTPerformanceMonitor. 检测性能 抓包 崩溃记录'
-  s.homepage         = 'https://github.com/LZRight123/JZTPerformanceMonitor'
+  s.name             = 'JZTCustomWidget'
+  s.version          = '1.0.0'
+  s.summary          = 'JZTCustomWidget. 自定义组件，工具，转场动画'
+  s.homepage         = 'https://github.com/LZRight123/JZTCustomWidget.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '350442340@qq.com' => '350442340@qq.com' }
-  s.source           = { :git => 'https://github.com/LZRight123/JZTPerformanceMonitor.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/LZRight123/JZTCustomWidget.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'JZTPerformanceMonitor/**/*.{h,m}'
-  s.resource = 'JZTPerformanceMonitor/JZTPerformanceMonitor.bundle'
+  s.source_files = 'JZTCustomWidget/**/*.{h,m}'
+  #s.resource = 'JZTCustomWidget/JZTCustomWidget.bundle'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'Social', 'CoreTelephony'
-  s.dependency 'YYKit'
   s.dependency 'Masonry'
-  s.dependency 'MBProgressHUD'
-  s.dependency 'MJRefresh'
   s.requires_arc = true
 end

@@ -8,6 +8,7 @@
 
 #import "JZTUpDownButton.h"
 #import "JZTBadgeButton.h"
+#import <Masonry/Masonry.h>
 @interface JZTUpDownButton()
 @property (nonatomic, strong, readwrite) UIImageView *imageView;
 @property (nonatomic, strong, readwrite) UILabel *titleLabel;
@@ -26,7 +27,7 @@
 }
 
 - (CGSize)intrinsicContentSize{
-    return CGSizeMake(51, 56 + self.space);
+    return CGSizeMake(MAX(51, self.imageView.image.size.width), self.imageView.image.size.height + 20 + self.space);
 }
 
 - (void)__setupUI{
