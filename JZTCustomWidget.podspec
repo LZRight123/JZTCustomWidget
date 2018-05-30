@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JZTCustomWidget'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'JZTCustomWidget. 自定义组件，工具，转场动画'
   s.homepage         = 'https://github.com/LZRight123/JZTCustomWidget.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
