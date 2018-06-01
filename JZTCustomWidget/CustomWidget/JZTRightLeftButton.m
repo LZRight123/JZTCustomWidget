@@ -7,6 +7,7 @@
 //
 
 #import "JZTRightLeftButton.h"
+#import <Masonry/Masonry.h>
 @interface JZTRightLeftButton()
 @property (nonatomic, strong, readwrite) UIImageView *imageView;
 @property (nonatomic, strong, readwrite) UILabel *titleLabel;
