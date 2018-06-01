@@ -27,7 +27,6 @@
 		DF90D46620BE38AB001F495F /* JZTAspectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF90D45920BE38AB001F495F /* JZTAspectProxy.m */; };
 		DF90D46820BE38B8001F495F /* JZTCustomWidget.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DF90D46720BE38B7001F495F /* JZTCustomWidget.podspec */; };
 		DFF9079020BE994300F58E88 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF9078F20BE994300F58E88 /* OneViewController.m */; };
-		DFF907B520C13FB100F58E88 /* JZTRightLeftButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF907B320C13FB000F58E88 /* JZTRightLeftButton.m */; };
 		E5C0155A65A82FE86664283A /* Pods_JZTCustomWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39641427190049D2194478CD /* Pods_JZTCustomWidget.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +71,6 @@
 		DF90D46720BE38B7001F495F /* JZTCustomWidget.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = JZTCustomWidget.podspec; path = ../../JZTCustomWidget.podspec; sourceTree = "<group>"; };
 		DFF9078E20BE994300F58E88 /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		DFF9078F20BE994300F58E88 /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
-		DFF907B320C13FB000F58E88 /* JZTRightLeftButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTRightLeftButton.m; sourceTree = "<group>"; };
-		DFF907B420C13FB100F58E88 /* JZTRightLeftButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZTRightLeftButton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +180,6 @@
 				DF90D44620BE38AA001F495F /* JZTBadgeButton.m */,
 				DF90D45120BE38AB001F495F /* JZTLeftRightButton.h */,
 				DF90D44820BE38AA001F495F /* JZTLeftRightButton.m */,
-				DFF907B420C13FB100F58E88 /* JZTRightLeftButton.h */,
-				DFF907B320C13FB000F58E88 /* JZTRightLeftButton.m */,
 				DF90D45720BE38AB001F495F /* JZTSegmentPageView.h */,
 				DF90D44B20BE38AA001F495F /* JZTSegmentPageView.m */,
 				DF90D44920BE38AA001F495F /* JZTAspectProxy.h */,
@@ -319,7 +314,6 @@
 				DF90D45E20BE38AB001F495F /* JZTLeftRightButton.m in Sources */,
 				DF90D46420BE38AB001F495F /* JZTScanVC.m in Sources */,
 				DF90D42920BE36CA001F495F /* AppDelegate.m in Sources */,
-				DFF907B520C13FB100F58E88 /* JZTRightLeftButton.m in Sources */,
 				DF90D45C20BE38AB001F495F /* JZTNormalTransitioningAnimate.m in Sources */,
 				DF90D45D20BE38AB001F495F /* JZTBadgeButton.m in Sources */,
 				DF90D46520BE38AB001F495F /* JZTScanReadImageVC.m in Sources */,
