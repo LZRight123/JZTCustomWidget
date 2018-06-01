@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,6 +62,8 @@
 		D96256F7E32A55B9F907CE78A145F46F /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A3637FEE52051CBD556BA4A3ABAF90D5 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDE8DDD1F68A5C4A7E17DB774573C8DC /* JZTCustomWidget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D82E8827D1CA62911587F9E886DA1E1 /* JZTCustomWidget-dummy.m */; };
 		DDFB782C5EF5F2B23E6F4338D5EF1795 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ECFD12E78C2CA945044CB88F411C65 /* Foundation.framework */; };
+		DFF907B120C13E6100F58E88 /* JZTRightLeftButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF907AF20C13E6000F58E88 /* JZTRightLeftButton.m */; };
+		DFF907B220C13E6100F58E88 /* JZTRightLeftButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF907B020C13E6100F58E88 /* JZTRightLeftButton.h */; };
 		E49D7FE7D22E7E9E1B1BE4CE853BB025 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = F48C406D425719CCA48F5E9965F24C15 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9A6C142C1D40E0C46ACB79D6B9A5498 /* JZTToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E3C534B440FE8AC50F6F1E0B7118471 /* JZTToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EECFC788C6A7C3AAA591FFB48A049E1F /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 62383F4E9EAD7481DD4D9FE095CE0D98 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -109,7 +111,7 @@
 		35F4B4B1F641AD3BDA89912FCF9611CE /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		38E48C50F1D56ABCE07AF8453C63D349 /* Pods-JZTCustomWidget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JZTCustomWidget-acknowledgements.plist"; sourceTree = "<group>"; };
 		39673478203CA4F48B2A4462DA0DC774 /* JZTTopToBottomTransitioningAnimate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JZTTopToBottomTransitioningAnimate.m; path = JZTCustomWidget/TransitioningAnimate/JZTTopToBottomTransitioningAnimate.m; sourceTree = "<group>"; };
-		3ADC32CD7589A3460E2F74461A5A39DF /* JZTCustomWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JZTCustomWidget.framework; path = JZTCustomWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ADC32CD7589A3460E2F74461A5A39DF /* JZTCustomWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JZTCustomWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8D13D8874A8312A8C23FEE80F4456A /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		4032D1040A8C2BFF6928271F1474D6BD /* JZTScanVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JZTScanVC.h; path = JZTCustomWidget/CustomWidget/JZTScanVC.h; sourceTree = "<group>"; };
 		44DADE6BBC34C84D786589F9925C863B /* Pods-JZTCustomWidget.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JZTCustomWidget.modulemap"; sourceTree = "<group>"; };
@@ -129,8 +131,8 @@
 		788AAC5A59F79CB1945DC2C223BEA624 /* JZTCustomWidget-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JZTCustomWidget-prefix.pch"; sourceTree = "<group>"; };
 		7A0E5A24C4095C9B4CB8A5EA53E1B3C2 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		7AB3176CD7892997F7490839DFE938D9 /* Pods-JZTCustomWidget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JZTCustomWidget-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7CD69DBDC50F0E3DBB8538BF849F19E2 /* Pods_JZTCustomWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JZTCustomWidget.framework; path = "Pods-JZTCustomWidget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CF5B70601CE684CE096B8AD5EBD1433 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CD69DBDC50F0E3DBB8538BF849F19E2 /* Pods_JZTCustomWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JZTCustomWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CF5B70601CE684CE096B8AD5EBD1433 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3C534B440FE8AC50F6F1E0B7118471 /* JZTToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JZTToolbar.h; path = JZTCustomWidget/CustomWidget/JZTToolbar.h; sourceTree = "<group>"; };
 		801BEFDA726B50080302C5906323B786 /* JZTPopupTransitioningAnimate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JZTPopupTransitioningAnimate.h; path = JZTCustomWidget/TransitioningAnimate/JZTPopupTransitioningAnimate.h; sourceTree = "<group>"; };
 		8B06347D49F958EA23FE06961E3CBFB5 /* JZTNormalTransitioningAnimate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JZTNormalTransitioningAnimate.m; path = JZTCustomWidget/TransitioningAnimate/JZTNormalTransitioningAnimate.m; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		9003F270B78A83EFD6893839B1D2FBFD /* JZTAspectProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JZTAspectProxy.m; path = JZTCustomWidget/CustomWidget/JZTAspectProxy.m; sourceTree = "<group>"; };
 		91D9EED0DE1F6A5F71DD580F12997DC4 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		92E136D3832FF6AC388FA59C29AAD53C /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EE3AAEBDA56CDBC6FE9D5A72FE64EB3 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		A06E82218776572713675A086927C2C8 /* JZTAspectProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JZTAspectProxy.h; path = JZTCustomWidget/CustomWidget/JZTAspectProxy.h; sourceTree = "<group>"; };
 		A3637FEE52051CBD556BA4A3ABAF90D5 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
@@ -163,6 +165,8 @@
 		DB6A4B57D68B10C72D03723A23FC4277 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		DD6FA3204BA3F7E5A5461F4155A070AC /* JZTButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JZTButton.h; path = JZTCustomWidget/CustomWidget/JZTButton.h; sourceTree = "<group>"; };
 		DFEB6EDCCC6DF08307B72CF412671698 /* Pods-JZTCustomWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JZTCustomWidget.release.xcconfig"; sourceTree = "<group>"; };
+		DFF907AF20C13E6000F58E88 /* JZTRightLeftButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTRightLeftButton.m; sourceTree = "<group>"; };
+		DFF907B020C13E6100F58E88 /* JZTRightLeftButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZTRightLeftButton.h; sourceTree = "<group>"; };
 		E825C609D4B94A1D4934E3120D175E4F /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		E96C19DBD2680992E65C3C00E4FA59F3 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		EE93F61D3A596F689A038D959325244F /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
@@ -300,7 +304,6 @@
 				19E1B0C2F0217AE7E1B1FFE6BF5EC162 /* ViewController+MASAdditions.m */,
 				253FDB4806CD8898D9AC9A71356B0AA1 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -343,6 +346,8 @@
 				CF0C27B3E11A37F85CC83ED1E1A14147 /* JZTButton.m */,
 				52F8E1407F3B88D9B5EEA9DDE62DBEBB /* JZTLeftRightButton.h */,
 				5234E97D5DBFDE84D29D60B90841B33D /* JZTLeftRightButton.m */,
+				DFF907B020C13E6100F58E88 /* JZTRightLeftButton.h */,
+				DFF907AF20C13E6000F58E88 /* JZTRightLeftButton.m */,
 				071DC5C2657CDFC68A4F26ACE36F5D0E /* JZTNormalTransitioningAnimate.h */,
 				8B06347D49F958EA23FE06961E3CBFB5 /* JZTNormalTransitioningAnimate.m */,
 				801BEFDA726B50080302C5906323B786 /* JZTPopupTransitioningAnimate.h */,
@@ -361,7 +366,6 @@
 				C19386CFA92CFC489E5AC438D0E59D3F /* JZTUpDownButton.m */,
 				3348C50CF72FD74868132F6CDE135280 /* Support Files */,
 			);
-			name = JZTCustomWidget;
 			path = JZTCustomWidget;
 			sourceTree = "<group>";
 		};
@@ -412,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A311231EA33FC48AD89BBC16624EAD7 /* JZTAspectProxy.h in Headers */,
+				DFF907B220C13E6100F58E88 /* JZTRightLeftButton.h in Headers */,
 				15B85F9A4FD053C1C4D0FF7BB243ECD8 /* JZTBadgeButton.h in Headers */,
 				BA261C459371D05E7999C0D7A2424933 /* JZTButton.h in Headers */,
 				1CDB8EB030E650581F04E7921A9B3020 /* JZTCustomWidget-umbrella.h in Headers */,
@@ -537,6 +542,7 @@
 				37EA9BF9DD38817F24F0B027521C20FD /* JZTSegmentPageView.m in Sources */,
 				0C556DFD62168150E13CBCE8F17499B0 /* JZTToolbar.m in Sources */,
 				8A0831E4DFBA0E11B514B29A0307EF16 /* JZTTopToBottomTransitioningAnimate.m in Sources */,
+				DFF907B120C13E6100F58E88 /* JZTRightLeftButton.m in Sources */,
 				7E360B664E2FF8B6DAD2C94A8A7CFBCD /* JZTUpDownButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,11 +669,7 @@
 				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
 				PRODUCT_MODULE_NAME = Masonry;
 				PRODUCT_NAME = Masonry;
@@ -697,11 +699,7 @@
 				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
 				PRODUCT_MODULE_NAME = Masonry;
 				PRODUCT_NAME = Masonry;
@@ -732,11 +730,7 @@
 				INFOPLIST_FILE = "Target Support Files/JZTCustomWidget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JZTCustomWidget/JZTCustomWidget.modulemap";
 				PRODUCT_MODULE_NAME = JZTCustomWidget;
 				PRODUCT_NAME = JZTCustomWidget;
@@ -767,11 +761,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-JZTCustomWidget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-JZTCustomWidget/Pods-JZTCustomWidget.modulemap";
 				OTHER_LDFLAGS = "";
@@ -804,11 +794,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-JZTCustomWidget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-JZTCustomWidget/Pods-JZTCustomWidget.modulemap";
 				OTHER_LDFLAGS = "";
@@ -842,11 +828,7 @@
 				INFOPLIST_FILE = "Target Support Files/JZTCustomWidget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JZTCustomWidget/JZTCustomWidget.modulemap";
 				PRODUCT_MODULE_NAME = JZTCustomWidget;
 				PRODUCT_NAME = JZTCustomWidget;
