@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "JZTScanVC.h"
-
+#import "JZTRightLeftButton.h"
 @interface ViewController ()
 
 @end
@@ -26,7 +26,7 @@
 }
 
 - (void)viewDidLoad {
-    
+    JZTRightLeftButton *btn = [[JZTRightLeftButton alloc]init];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }

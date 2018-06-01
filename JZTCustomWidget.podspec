@@ -4,7 +4,7 @@
 #
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-# 工具
+#
 
 Pod::Spec.new do |s|
   s.name             = 'JZTCustomWidget'
