@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+typedef NS_ENUM(NSUInteger, JZTScanSourceType) {
+    JZTScanSourceTypeImage,
+    JZTScanSourceTypeCamera,
+};
 @class JZTScanVC;
 @protocol JZTScanDelegate<NSObject>
 - (void)jztSacn:(JZTScanVC *)scanVC didSearchResult:(NSString *)result;
@@ -28,4 +32,5 @@
 - (void)openPhotoLibrary;
 ///重载可调用super 
 - (void)readingCompletionWithResult:(NSString *)result;
+- (void)readingFailedType:(JZTScanSourceType)source;
 @end

@@ -11,6 +11,6 @@
 @interface JZTBadgeButton : UIButton
 @property (nonatomic, copy) NSString *badgeValue;
 @property (nonatomic, assign) CGFloat badgeDefaultSize;//默认高度 = 17.
-///用于外部调整 example @[@8, @8,@15 ...] 表示1个字符需要增加宽度 2个....
-@property (nonatomic, strong) NSArray<NSNumber *> *addWidths;//
+///用于外部调整
+@property (nonatomic, assign) CGFloat addWidth;
 @end

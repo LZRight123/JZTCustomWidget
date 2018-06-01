@@ -135,10 +135,8 @@
     }
 }
 
-- (void)notReadingCodePopAlertWithTitle:(NSString *)title message:(NSString *)message{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-    [self presentViewController:alert animated:YES completion:nil];
+- (void)readingFailedType:(JZTScanSourceType)source{
+    //子类实现
 }
 
 #pragma mark -
@@ -151,7 +149,7 @@
         [self stopReading];
         
         if (stringValue.length == 0) {
-            [self notReadingCodePopAlertWithTitle:@"维码识别失败" message:@"识别不了扫中的二维码"];
+            [self readingFailedType:JZTScanSourceTypeCamera];
             return;
         }
         [self readingCompletionWithResult:stringValue];
@@ -167,7 +165,7 @@
     [readVC setReadingCompletion:^(NSString *result) {
         [picker dismissViewControllerAnimated:YES completion:nil];
         if (result.length == 0) {
-            [weakSelf notReadingCodePopAlertWithTitle:@"找不到二维码" message:@"导入的图片里并没有找到二维码"];
+            [weakSelf readingFailedType:JZTScanSourceTypeImage];
         }else{
             [self readingCompletionWithResult:result];
         }

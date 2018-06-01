@@ -16,7 +16,7 @@
     if (self) {
         self.hidden = YES;
         self.userInteractionEnabled = NO;
-        self.addWidths = @[@8.0, @8.0, @15.0];
+        self.addWidth = 8.;
         self.badgeDefaultSize = 17.;
         self.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:75.0f/255.0f blue:39.0f/255.0f alpha:1.0f];
         self.titleLabel.font = [UIFont systemFontOfSize:11];
@@ -40,12 +40,8 @@
         if (badgeValue.length > 1) {
             // 文字的尺寸
             NSDictionary *attrs = @{NSFontAttributeName : self.titleLabel.font};
-            CGSize badgeSize = [badgeValue boundingRectWithSize:CGSizeMake(badgeW, badgeH) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-            if (badgeValue.length - 1 < self.addWidths.count ) {
-                badgeW = badgeSize.width + self.addWidths[badgeValue.length-1].floatValue;
-            }else{
-                badgeW = badgeSize.width + self.addWidths.lastObject.floatValue;
-            }
+            CGSize badgeSize = [badgeValue boundingRectWithSize:CGSizeMake(100, 100) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrs context:nil].size;
+             badgeW = badgeSize.width + self.addWidth;
         }
         frame.size.width = badgeW;
         frame.size.height = badgeH;

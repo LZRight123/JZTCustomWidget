@@ -67,7 +67,6 @@
         UIButton *supBtn = _titleButtons[index];
         JZTBadgeButton *badgeBtn = [self viewWithTag:(100+index)];
         badgeBtn.badgeDefaultSize = 13;
-        badgeBtn.addWidths = @[@10., @13., @25.];
         badgeBtn.badgeValue = value;
         badgeBtn.center = CGPointMake(CGRectGetWidth(supBtn.bounds), CGRectGetMinY(supBtn.titleLabel.frame));
     }

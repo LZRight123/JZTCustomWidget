@@ -42,51 +42,6 @@
     self.space = space;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-}
-
-- (CGSize)intrinsicContentSize {
-    JZTButtonEdgeInsetsStyle style = self.style;
-    CGFloat space = self.space;
-    CGSize size = [super intrinsicContentSize];
-    
-    // 1. 得到imageView和titleLabel的宽、高
-    UIImage *image = self.currentImage;
-    CGFloat imageWith = image.size.width;
-    CGFloat imageHeight = image.size.height;
-    
-    NSString *text = self.currentTitle;
-    CGSize labelSize = [text sizeWithAttributes:@{NSFontAttributeName : self.titleLabel.font}];
-    CGFloat labelWidth = labelSize.width;
-    CGFloat labelHeight = labelSize.height;
-    
-    
-    CGFloat width = size.width;
-    CGFloat height = size.height;
-    switch (style) {
-        case JZTButtonEdgeInsetsStyleTop:
-        case JZTButtonEdgeInsetsStyleBottom:
-        {
-            height = imageHeight + labelHeight + space;
-            width = MAX(imageWith, labelWidth);
-        }
-            break;
-        case JZTButtonEdgeInsetsStyleLeft:
-        case JZTButtonEdgeInsetsStyleRight:
-        {
-            width = imageWith + labelWidth + space;
-        }
-            break;
-            break;
-        default:
-            break;
-    }
-    
-    return CGSizeMake(width, height);
-}
-
 - (CGRect)contentRectForBounds:(CGRect)bounds {
     return bounds;
 }
@@ -122,7 +77,7 @@
 - (CGRect)titleRectForContentRect:(CGRect)contentRect
 {
     CGRect frame = CGRectZero;
-    NSString *text = self.currentTitle;
+    NSString *text = self.currentTitle?self.currentTitle:@"";
     CGSize labelSize = [text sizeWithAttributes:@{NSFontAttributeName : self.titleLabel.font}];
     CGFloat labelWidth = labelSize.width;
     CGFloat labelHeight = labelSize.height;
