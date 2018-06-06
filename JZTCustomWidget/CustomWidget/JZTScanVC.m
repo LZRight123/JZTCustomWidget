@@ -129,7 +129,7 @@
     [self presentViewController:pickCtr animated:YES completion:nil];
 }
 
-- (void)readingCompletionWithResult:(NSString *)result{
+- (void)readingCompletionWithResult:(NSString *)result metadataObjectType:(AVMetadataObjectType)type{
     if ([self.delegate respondsToSelector:@selector(jztSacn:didSearchResult:)]) {
         [self.delegate jztSacn:self didSearchResult:result];
     }
@@ -152,7 +152,7 @@
             [self readingFailedType:JZTScanSourceTypeCamera];
             return;
         }
-        [self readingCompletionWithResult:stringValue];
+        [self readingCompletionWithResult:stringValue metadataObjectType:metadataObject.type];
     }
 }
 
@@ -167,7 +167,7 @@
         if (result.length == 0) {
             [weakSelf readingFailedType:JZTScanSourceTypeImage];
         }else{
-            [self readingCompletionWithResult:result];
+            [self readingCompletionWithResult:result metadataObjectType:AVMetadataObjectTypeQRCode];
         }
     }];
     [picker pushViewController:readVC animated:YES];

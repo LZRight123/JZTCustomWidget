@@ -31,6 +31,6 @@ typedef NS_ENUM(NSUInteger, JZTScanSourceType) {
 //从相册读取二维码
 - (void)openPhotoLibrary;
 ///重载可调用super 
-- (void)readingCompletionWithResult:(NSString *)result;
+- (void)readingCompletionWithResult:(NSString *)result metadataObjectType:(AVMetadataObjectType)type;
 - (void)readingFailedType:(JZTScanSourceType)source;
 @end
