@@ -22,19 +22,15 @@
     UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
-    self.maskView.frame = toViewController.view.bounds;
     
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     if (toViewController.isBeingPresented) {
-        self.maskView.alpha = 0;
-        [[transitionContext containerView] addSubview:self.maskView];
         [[transitionContext containerView] addSubview:toViewController.view];
         
         toViewController.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
         
         [UIView animateWithDuration:duration*0.8 animations:^{
             toViewController.view.transform = CGAffineTransformMakeScale(1.1, 1.1);
-            self.maskView.alpha = 0.5;
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:duration*0.1 animations:^{
                 toViewController.view.transform = CGAffineTransformMakeScale(0.9, 0.9);
@@ -42,7 +38,8 @@
                 [UIView animateWithDuration:duration*0.1 animations:^{
                     toViewController.view.transform = CGAffineTransformMakeScale(1, 1);
                 } completion:^(BOOL finished) {
-                    [transitionContext completeTransition:finished];
+                    BOOL wasCancelled = [transitionContext transitionWasCancelled];
+                    [transitionContext completeTransition:!wasCancelled];
                 }];
 //                [transitionContext completeTransition:finished];
             }];
@@ -52,9 +49,9 @@
     } else {
         [UIView animateWithDuration:duration * 0.8 animations:^{
             fromViewController.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
-            self.maskView.alpha = 0;
         } completion:^(BOOL finished) {
-            [transitionContext completeTransition:finished];
+            BOOL wasCancelled = [transitionContext transitionWasCancelled];
+            [transitionContext completeTransition:!wasCancelled];
         }];
     }
 }

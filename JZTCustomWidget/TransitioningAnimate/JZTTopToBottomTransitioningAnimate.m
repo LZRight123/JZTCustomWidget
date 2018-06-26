@@ -22,28 +22,21 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIView *presentedView = [transitionContext viewForKey:UITransitionContextToViewKey];
     
-    CGRect newFrame = presentedView.frame;
-    newFrame.origin.y = self.topSpace;
-    newFrame.size.height -= self.topSpace;
-    self.maskView.frame = newFrame;
     if ([transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].isBeingPresented) {
-        self.maskView.alpha = 0;
-        [[transitionContext containerView]addSubview:self.maskView];
         [[transitionContext containerView]addSubview:presentedView];
-//        presentedView.frame = newFrame;
         presentedView.transform = CGAffineTransformMakeTranslation(0, -[UIScreen mainScreen].bounds.size.height);
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             presentedView.transform = CGAffineTransformIdentity;
-            self.maskView.alpha = 0.5;
         }completion:^(BOOL finished) {
-            [transitionContext completeTransition:YES];
+            BOOL wasCancelled = [transitionContext transitionWasCancelled];
+            [transitionContext completeTransition:!wasCancelled];
         }];
     }else{
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             [transitionContext viewForKey:UITransitionContextFromViewKey].transform = CGAffineTransformMakeTranslation(0, -[UIScreen mainScreen].bounds.size.height);
-            self.maskView.alpha = 0;
         } completion:^(BOOL finished) {
-            [transitionContext completeTransition:finished];
+            BOOL wasCancelled = [transitionContext transitionWasCancelled];
+            [transitionContext completeTransition:!wasCancelled];
         }];
     }
     

@@ -16,7 +16,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSNumber *bum = @(-2);
+    NSLog(@"%@",bum.stringValue);
     return YES;
 }
 

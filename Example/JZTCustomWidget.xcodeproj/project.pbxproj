@@ -26,6 +26,9 @@
 		DF90D46520BE38AB001F495F /* JZTScanReadImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF90D45620BE38AB001F495F /* JZTScanReadImageVC.m */; };
 		DF90D46620BE38AB001F495F /* JZTAspectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF90D45920BE38AB001F495F /* JZTAspectProxy.m */; };
 		DF90D46820BE38B8001F495F /* JZTCustomWidget.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DF90D46720BE38B7001F495F /* JZTCustomWidget.podspec */; };
+		DFC0979420DB98AE007D7939 /* TestPopverView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0979320DB98AE007D7939 /* TestPopverView.m */; };
+		DFD5E62120CE67800079628F /* TestTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD5E62020CE67800079628F /* TestTransitioningDelegate.m */; };
+		DFD5E62920CE77F40079628F /* JZTPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD5E62820CE77F40079628F /* JZTPresentationController.m */; };
 		DFF9079020BE994300F58E88 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF9078F20BE994300F58E88 /* OneViewController.m */; };
 		DFF907B820C1438100F58E88 /* JZTRightLeftButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF907B620C1438100F58E88 /* JZTRightLeftButton.m */; };
 		E5C0155A65A82FE86664283A /* Pods_JZTCustomWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39641427190049D2194478CD /* Pods_JZTCustomWidget.framework */; };
@@ -70,6 +73,12 @@
 		DF90D45820BE38AB001F495F /* JZTUpDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZTUpDownButton.h; sourceTree = "<group>"; };
 		DF90D45920BE38AB001F495F /* JZTAspectProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTAspectProxy.m; sourceTree = "<group>"; };
 		DF90D46720BE38B7001F495F /* JZTCustomWidget.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = JZTCustomWidget.podspec; path = ../../JZTCustomWidget.podspec; sourceTree = "<group>"; };
+		DFC0979220DB98AE007D7939 /* TestPopverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPopverView.h; sourceTree = "<group>"; };
+		DFC0979320DB98AE007D7939 /* TestPopverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestPopverView.m; sourceTree = "<group>"; };
+		DFD5E61F20CE67800079628F /* TestTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTransitioningDelegate.h; sourceTree = "<group>"; };
+		DFD5E62020CE67800079628F /* TestTransitioningDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTransitioningDelegate.m; sourceTree = "<group>"; };
+		DFD5E62520CE75120079628F /* JZTPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZTPresentationController.h; sourceTree = "<group>"; };
+		DFD5E62820CE77F40079628F /* JZTPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTPresentationController.m; sourceTree = "<group>"; };
 		DFF9078E20BE994300F58E88 /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		DFF9078F20BE994300F58E88 /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		DFF907B620C1438100F58E88 /* JZTRightLeftButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTRightLeftButton.m; sourceTree = "<group>"; };
@@ -134,6 +143,10 @@
 				DF90D42B20BE36CA001F495F /* ViewController.m */,
 				DFF9078E20BE994300F58E88 /* OneViewController.h */,
 				DFF9078F20BE994300F58E88 /* OneViewController.m */,
+				DFC0979220DB98AE007D7939 /* TestPopverView.h */,
+				DFC0979320DB98AE007D7939 /* TestPopverView.m */,
+				DFD5E61F20CE67800079628F /* TestTransitioningDelegate.h */,
+				DFD5E62020CE67800079628F /* TestTransitioningDelegate.m */,
 				DF90D42D20BE36CA001F495F /* Main.storyboard */,
 				DF90D43020BE36CC001F495F /* Assets.xcassets */,
 				DF90D43220BE36CC001F495F /* LaunchScreen.storyboard */,
@@ -158,10 +171,12 @@
 			children = (
 				DF90D44120BE38AA001F495F /* JZTNormalTransitioningAnimate.h */,
 				DF90D44420BE38AA001F495F /* JZTNormalTransitioningAnimate.m */,
-				DF90D44020BE38AA001F495F /* JZTPopupTransitioningAnimate.m */,
 				DF90D44220BE38AA001F495F /* JZTPopupTransitioningAnimate.h */,
+				DF90D44020BE38AA001F495F /* JZTPopupTransitioningAnimate.m */,
 				DF90D43F20BE38AA001F495F /* JZTTopToBottomTransitioningAnimate.h */,
 				DF90D44320BE38AA001F495F /* JZTTopToBottomTransitioningAnimate.m */,
+				DFD5E62520CE75120079628F /* JZTPresentationController.h */,
+				DFD5E62820CE77F40079628F /* JZTPresentationController.m */,
 			);
 			path = TransitioningAnimate;
 			sourceTree = "<group>";
@@ -313,10 +328,13 @@
 				DF90D46020BE38AB001F495F /* JZTSegmentPageView.m in Sources */,
 				DF90D46620BE38AB001F495F /* JZTAspectProxy.m in Sources */,
 				DF90D45A20BE38AB001F495F /* JZTPopupTransitioningAnimate.m in Sources */,
+				DFC0979420DB98AE007D7939 /* TestPopverView.m in Sources */,
 				DF90D46320BE38AB001F495F /* JZTToolbar.m in Sources */,
+				DFD5E62920CE77F40079628F /* JZTPresentationController.m in Sources */,
 				DF90D43720BE36CC001F495F /* main.m in Sources */,
 				DF90D45F20BE38AB001F495F /* JZTUpDownButton.m in Sources */,
 				DF90D45E20BE38AB001F495F /* JZTLeftRightButton.m in Sources */,
+				DFD5E62120CE67800079628F /* TestTransitioningDelegate.m in Sources */,
 				DF90D46420BE38AB001F495F /* JZTScanVC.m in Sources */,
 				DF90D42920BE36CA001F495F /* AppDelegate.m in Sources */,
 				DFF907B820C1438100F58E88 /* JZTRightLeftButton.m in Sources */,

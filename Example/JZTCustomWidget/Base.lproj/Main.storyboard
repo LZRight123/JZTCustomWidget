@@ -64,13 +64,26 @@
                                     <action selector="back:" destination="B7P-61-gFx" eventType="touchUpInside" id="xSn-Mb-k2T"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgJ-LH-pxS">
+                                <rect key="frame" x="173" y="180" width="90" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="titleEdgeInsets" minX="-29" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="13" minY="0.0" maxX="0.0" maxY="45"/>
+                                <size key="titleShadowOffset" width="5" height="0.0"/>
+                                <state key="normal" title="Button" image="addpic">
+                                    <color key="titleColor" red="1" green="0.29411764709999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACb-k7-nXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414" y="92"/>
+            <point key="canvasLocation" x="1413.5999999999999" y="91.304347826086968"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addpic" width="28" height="23"/>
+    </resources>
 </document>

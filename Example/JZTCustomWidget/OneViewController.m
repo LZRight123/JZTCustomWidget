@@ -8,6 +8,7 @@
 
 #import "OneViewController.h"
 #import "JZTSegmentPageView.h"
+#import <Masonry/Masonry.h>
 @interface OneViewController ()
 
 @end
@@ -16,13 +17,27 @@
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    UIView *view = [[UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
     
-    JZTSegmentPageView *pageview = [[JZTSegmentPageView alloc]initWithFrame:self.view.bounds withTitles:@[@"ss",@"sfaf"] withViewControllers:@[@"UIViewController"] loadAtIndex:0 withParameters:nil ];
-    [self.view addSubview:pageview];
-    [self.view sendSubviewToBack:pageview];
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(100, 100));
+    }];
+    
+//    JZTSegmentPageView *pageview = [[JZTSegmentPageView alloc]initWithFrame:self.view.bounds withTitles:@[@"ss",@"sfaf"] withViewControllers:@[@"UIViewController"] loadAtIndex:0 withParameters:nil ];
+//    [self.view addSubview:pageview];
+//    [self.view sendSubviewToBack:pageview];
 }
 
 - (void)didReceiveMemoryWarning {

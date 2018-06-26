@@ -76,15 +76,6 @@
     _output = [[AVCaptureMetadataOutput alloc]init];
     [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    
-    CGFloat x = CGRectGetMinY(self.scanRect) / screenHeight;
-    CGFloat y = CGRectGetMinX(self.scanRect) / screenWidth;
-    CGFloat width = CGRectGetWidth(self.scanRect) / screenWidth;
-    CGFloat height = CGRectGetHeight(self.scanRect) / screenHeight;
-    _output.rectOfInterest = CGRectMake(y, x, height, width);
-    
     _session = [[AVCaptureSession alloc]init];
     if ([_session canAddInput:self.input]) {
         [_session addInput:self.input];
@@ -108,6 +99,10 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         self.previewLayer.frame = self.view.layer.bounds;
         [self.view.layer insertSublayer:self.previewLayer atIndex:0];
+        __weak typeof(self) weakSelf = self;
+        [[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureInputPortFormatDescriptionDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+            weakSelf.output.rectOfInterest = [weakSelf.previewLayer metadataOutputRectOfInterestForRect:weakSelf.scanRect];
+        }];
     });
 }
 #pragma mark -

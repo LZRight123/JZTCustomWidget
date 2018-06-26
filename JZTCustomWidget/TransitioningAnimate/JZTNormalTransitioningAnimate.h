@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @interface JZTNormalTransitioningAnimate : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
-@property (nonatomic, strong, readonly) UIView *maskView;
+///默认 0.25s
 @property (nonatomic, strong) NSNumber *transitionDuration;
 
 + (instancetype)sharedAnimate;

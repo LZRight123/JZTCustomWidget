@@ -7,10 +7,8 @@
 //
 
 #import "JZTNormalTransitioningAnimate.h"
-
+#import "JZTPresentationController.h"
 @interface JZTNormalTransitioningAnimate ()
-
-@property (nonatomic, strong, readwrite) UIView *maskView;
 
 @end
 
@@ -22,6 +20,10 @@
         animate = [[[self class] alloc] init];
     });
     return animate;
+}
+
+- (nullable UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(nullable UIViewController *)presenting sourceViewController:(UIViewController *)source{
+    return [[JZTPresentationController alloc]initWithPresentedViewController:presented presentingViewController:presenting];
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
@@ -40,37 +42,25 @@
     UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
-    self.maskView.frame = toViewController.view.bounds;
     if (toViewController.isBeingPresented) {
-        self.maskView.alpha = 0;
-        [[transitionContext containerView] addSubview:self.maskView];
         [[transitionContext containerView] addSubview:toViewController.view];
         
         toViewController.view.transform = CGAffineTransformMakeTranslation(0, [UIScreen mainScreen].bounds.size.height);
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             toViewController.view.transform = CGAffineTransformIdentity;
-            self.maskView.alpha = 0.5;
         } completion:^(BOOL finished) {
-            [transitionContext completeTransition:finished];
+            BOOL wasCancelled = [transitionContext transitionWasCancelled];
+            [transitionContext completeTransition:!wasCancelled];
         }];
     } else {
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
             fromViewController.view.transform = CGAffineTransformMakeTranslation(0, [UIScreen mainScreen].bounds.size.height);
-            self.maskView.alpha = 0;
         } completion:^(BOOL finished) {
-            [transitionContext completeTransition:finished];
+            BOOL wasCancelled = [transitionContext transitionWasCancelled];
+            [transitionContext completeTransition:!wasCancelled];
         }];
     }
-}
-
-#pragma mark - getter @property
-- (UIView *)maskView{
-    if (!_maskView) {
-        _maskView = [[UIButton alloc]init];
-        _maskView.backgroundColor = [UIColor blackColor];
-    }
-    return _maskView;
 }
 
 @end

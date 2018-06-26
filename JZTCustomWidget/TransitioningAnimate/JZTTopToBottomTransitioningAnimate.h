@@ -9,5 +9,5 @@
 #import "JZTNormalTransitioningAnimate.h"
 
 @interface JZTTopToBottomTransitioningAnimate : JZTNormalTransitioningAnimate
-@property (nonatomic, assign) CGFloat topSpace;//
+@property (nonatomic, assign) CGFloat topSpace;
 @end
