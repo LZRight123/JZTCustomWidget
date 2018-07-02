@@ -16,8 +16,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSNumber *bum = @(-2);
-    NSLog(@"%@",bum.stringValue);
+    
+    
     return YES;
 }
 

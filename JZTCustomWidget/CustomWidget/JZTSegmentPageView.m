@@ -63,7 +63,7 @@
 }
 
 - (void)setbadgeValue:(NSString *)value atIndex:(NSInteger)index{
-    if (value.integerValue != 0 && index < _titleButtons.count) {
+    if (index < _titleButtons.count) {
         UIButton *supBtn = _titleButtons[index];
         JZTBadgeButton *badgeBtn = [self viewWithTag:(100+index)];
         badgeBtn.badgeDefaultSize = 13;

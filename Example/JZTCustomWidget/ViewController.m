@@ -16,7 +16,7 @@
 #import "JZTTopToBottomTransitioningAnimate.h"
 #import <Masonry/Masonry.h>
 #import "JZTButton.h"
-@interface ViewController ()<UIPopoverPresentationControllerDelegate>
+@interface ViewController ()<UIPopoverPresentationControllerDelegate,UITextFieldDelegate>
 
 @end
 
@@ -32,7 +32,48 @@
     nextVC.modalPresentationStyle = UIModalPresentationCustom;
     nextVC.transitioningDelegate = [JZTPopupTransitioningAnimate sharedAnimate];
     [self showDetailViewController:nextVC sender:nil];
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+- (IBAction)editibegitn:(UITextField *)sender {
+    NSString *text = sender.text;
+    if (sender.isSecureTextEntry) {
+//        sender.text = text;
+        [sender insertText:sender.text];
+    }
+    
+}
+//实现代理<UITextFieldDelegate>
+//- (void)textFieldDidBeginEditing:(UITextField *)textField
+//{
+//    if (textField.secureTextEntry)
+//    {
+//        [textField insertText:textField.text];
+//    }
+//}
 
+- (IBAction)editingChange:(UITextField *)sender {
+    
+    NSString *text = sender.text;
+    if (round(text.doubleValue) > 999999 + 1) {
+        if (round(text.doubleValue) == text.doubleValue) {
+            sender.text = [text substringToIndex:text.length-1];
+            return;
+        }
+        text = @"999999";
+    }
+    if ([text componentsSeparatedByString:@"."].count == 2 && [text componentsSeparatedByString:@"."].lastObject.length == 0) {
+        return;
+    }
+    NSDecimalNumberHandler *behav = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:2 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    NSDecimalNumber *origin = [NSDecimalNumber decimalNumberWithString:text];
+    NSDecimalNumber *new = [origin decimalNumberByRoundingAccordingToBehavior:behav];
+    if (sender.text.length < 1) {
+        return;
+    }
+    sender.text = new.stringValue;
+    
 }
 
 - (void)viewDidLoad {
