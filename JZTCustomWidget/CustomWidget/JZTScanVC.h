@@ -23,6 +23,7 @@ typedef NS_ENUM(NSUInteger, JZTScanSourceType) {
 @property (nonatomic, assign) CGRect scanRect;
 ///default =  @[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code]
 @property (nonatomic, strong) NSArray<AVMetadataObjectType> *metadataObjectTypes;
+@property (nonatomic, assign, readonly) BOOL cameraAuthorization;//yes is open
 
 -(void)startReading;
 -(void)stopReading;
@@ -30,6 +31,8 @@ typedef NS_ENUM(NSUInteger, JZTScanSourceType) {
 - (void)flashlightOnOrOff:(BOOL)onOrOff;
 //从相册读取二维码
 - (void)openPhotoLibrary;
+//没有授权情况下点警告确定，默认navigationController pop
+- (void)dontAuthorizationClickAlertSure;
 ///重载可调用super 
 - (void)readingCompletionWithResult:(NSString *)result metadataObjectType:(AVMetadataObjectType)type;
 - (void)readingFailedType:(JZTScanSourceType)source;

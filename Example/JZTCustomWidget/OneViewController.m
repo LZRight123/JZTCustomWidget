@@ -9,7 +9,10 @@
 #import "OneViewController.h"
 #import "JZTSegmentPageView.h"
 #import <Masonry/Masonry.h>
-@interface OneViewController ()
+#import "JZTAutoLayoutCell.h"
+#import "JZTOrdetailAuditManCell.h"
+@interface OneViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic)  UITableView *tableView;
 
 @end
 
@@ -26,33 +29,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIView *view = [[UIView alloc]init];
-    view.backgroundColor = [UIColor clearColor];
-    
-    [self.view addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    //    self.tableView.tableFooterView = [self createBottomView];
+    self.tableView.estimatedRowHeight = 95;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        make.top.equalTo(self.view);
     }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    JZTOrdetailAuditManCell *cell = [JZTOrdetailAuditManCell cellWithTableView:tableView];
+    [cell setupAuditMan:@"您 好" msg:@"不会吧不会吧不会吧兴因果不会吧不会吧不会吧兴因果不会吧不会吧不会吧兴因果不会吧不会吧不会吧兴因果不会吧不会吧不会吧兴因果不会吧不会吧不会吧兴因果不会吧不会吧不会吧兴因果不会吧不会吧不会吧兴因果"];
     
-//    JZTSegmentPageView *pageview = [[JZTSegmentPageView alloc]initWithFrame:self.view.bounds withTitles:@[@"ss",@"sfaf"] withViewControllers:@[@"UIViewController"] loadAtIndex:0 withParameters:nil ];
-//    [self.view addSubview:pageview];
-//    [self.view sendSubviewToBack:pageview];
+    return cell;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

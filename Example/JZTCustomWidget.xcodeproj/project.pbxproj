@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF66EB8820EC9B980014BD21 /* JZTAutoLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB8720EC9B980014BD21 /* JZTAutoLayoutCell.m */; };
+		DF66EB8B20EC9E130014BD21 /* JZTOrdetailAuditManCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB8920EC9E120014BD21 /* JZTOrdetailAuditManCell.m */; };
+		DF66EB9D20EC9E7D0014BD21 /* FDTransformLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB8E20EC9E7C0014BD21 /* FDTransformLayer.m */; };
+		DF66EB9E20EC9E7D0014BD21 /* FDLayoutSpacer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB8F20EC9E7C0014BD21 /* FDLayoutSpacer.m */; };
+		DF66EB9F20EC9E7D0014BD21 /* FDStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB9220EC9E7C0014BD21 /* FDStackView.m */; };
+		DF66EBA020EC9E7D0014BD21 /* FDStackViewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB9420EC9E7C0014BD21 /* FDStackViewExtensions.m */; };
+		DF66EBA120EC9E7D0014BD21 /* FDStackViewAlignmentLayoutArrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB9620EC9E7C0014BD21 /* FDStackViewAlignmentLayoutArrangement.m */; };
+		DF66EBA220EC9E7D0014BD21 /* FDStackViewDistributionLayoutArrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB9720EC9E7C0014BD21 /* FDStackViewDistributionLayoutArrangement.m */; };
+		DF66EBA320EC9E7D0014BD21 /* FDStackViewLayoutArrangement.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB9920EC9E7C0014BD21 /* FDStackViewLayoutArrangement.m */; };
+		DF66EBA420EC9E7D0014BD21 /* FDGapLayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = DF66EB9A20EC9E7C0014BD21 /* FDGapLayoutGuide.m */; };
 		DF90D42920BE36CA001F495F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF90D42820BE36CA001F495F /* AppDelegate.m */; };
 		DF90D42C20BE36CA001F495F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF90D42B20BE36CA001F495F /* ViewController.m */; };
 		DF90D42F20BE36CA001F495F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF90D42D20BE36CA001F495F /* Main.storyboard */; };
@@ -38,6 +48,26 @@
 		39641427190049D2194478CD /* Pods_JZTCustomWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JZTCustomWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80802E014466C034326D376E /* Pods-JZTCustomWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JZTCustomWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-JZTCustomWidget/Pods-JZTCustomWidget.release.xcconfig"; sourceTree = "<group>"; };
 		AC3C3E0640526AFFE98B69C4 /* Pods-JZTCustomWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JZTCustomWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JZTCustomWidget/Pods-JZTCustomWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		DF66EB8620EC9B980014BD21 /* JZTAutoLayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZTAutoLayoutCell.h; sourceTree = "<group>"; };
+		DF66EB8720EC9B980014BD21 /* JZTAutoLayoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZTAutoLayoutCell.m; sourceTree = "<group>"; };
+		DF66EB8920EC9E120014BD21 /* JZTOrdetailAuditManCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZTOrdetailAuditManCell.m; sourceTree = "<group>"; };
+		DF66EB8A20EC9E120014BD21 /* JZTOrdetailAuditManCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZTOrdetailAuditManCell.h; sourceTree = "<group>"; };
+		DF66EB8D20EC9E7C0014BD21 /* FDStackViewAlignmentLayoutArrangement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStackViewAlignmentLayoutArrangement.h; sourceTree = "<group>"; };
+		DF66EB8E20EC9E7C0014BD21 /* FDTransformLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTransformLayer.m; sourceTree = "<group>"; };
+		DF66EB8F20EC9E7C0014BD21 /* FDLayoutSpacer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDLayoutSpacer.m; sourceTree = "<group>"; };
+		DF66EB9020EC9E7C0014BD21 /* FDStackViewLayoutArrangement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStackViewLayoutArrangement.h; sourceTree = "<group>"; };
+		DF66EB9120EC9E7C0014BD21 /* FDStackViewDistributionLayoutArrangement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStackViewDistributionLayoutArrangement.h; sourceTree = "<group>"; };
+		DF66EB9220EC9E7C0014BD21 /* FDStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStackView.m; sourceTree = "<group>"; };
+		DF66EB9320EC9E7C0014BD21 /* FDGapLayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDGapLayoutGuide.h; sourceTree = "<group>"; };
+		DF66EB9420EC9E7C0014BD21 /* FDStackViewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStackViewExtensions.m; sourceTree = "<group>"; };
+		DF66EB9520EC9E7C0014BD21 /* FDTransformLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTransformLayer.h; sourceTree = "<group>"; };
+		DF66EB9620EC9E7C0014BD21 /* FDStackViewAlignmentLayoutArrangement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStackViewAlignmentLayoutArrangement.m; sourceTree = "<group>"; };
+		DF66EB9720EC9E7C0014BD21 /* FDStackViewDistributionLayoutArrangement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStackViewDistributionLayoutArrangement.m; sourceTree = "<group>"; };
+		DF66EB9820EC9E7C0014BD21 /* FDLayoutSpacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDLayoutSpacer.h; sourceTree = "<group>"; };
+		DF66EB9920EC9E7C0014BD21 /* FDStackViewLayoutArrangement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStackViewLayoutArrangement.m; sourceTree = "<group>"; };
+		DF66EB9A20EC9E7C0014BD21 /* FDGapLayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDGapLayoutGuide.m; sourceTree = "<group>"; };
+		DF66EB9B20EC9E7C0014BD21 /* FDStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStackView.h; sourceTree = "<group>"; };
+		DF66EB9C20EC9E7C0014BD21 /* FDStackViewExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStackViewExtensions.h; sourceTree = "<group>"; };
 		DF90D42420BE36CA001F495F /* JZTCustomWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JZTCustomWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF90D42720BE36CA001F495F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DF90D42820BE36CA001F495F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -114,6 +144,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF66EB8C20EC9E7C0014BD21 /* FDStackView */ = {
+			isa = PBXGroup;
+			children = (
+				DF66EB8D20EC9E7C0014BD21 /* FDStackViewAlignmentLayoutArrangement.h */,
+				DF66EB8E20EC9E7C0014BD21 /* FDTransformLayer.m */,
+				DF66EB8F20EC9E7C0014BD21 /* FDLayoutSpacer.m */,
+				DF66EB9020EC9E7C0014BD21 /* FDStackViewLayoutArrangement.h */,
+				DF66EB9120EC9E7C0014BD21 /* FDStackViewDistributionLayoutArrangement.h */,
+				DF66EB9220EC9E7C0014BD21 /* FDStackView.m */,
+				DF66EB9320EC9E7C0014BD21 /* FDGapLayoutGuide.h */,
+				DF66EB9420EC9E7C0014BD21 /* FDStackViewExtensions.m */,
+				DF66EB9520EC9E7C0014BD21 /* FDTransformLayer.h */,
+				DF66EB9620EC9E7C0014BD21 /* FDStackViewAlignmentLayoutArrangement.m */,
+				DF66EB9720EC9E7C0014BD21 /* FDStackViewDistributionLayoutArrangement.m */,
+				DF66EB9820EC9E7C0014BD21 /* FDLayoutSpacer.h */,
+				DF66EB9920EC9E7C0014BD21 /* FDStackViewLayoutArrangement.m */,
+				DF66EB9A20EC9E7C0014BD21 /* FDGapLayoutGuide.m */,
+				DF66EB9B20EC9E7C0014BD21 /* FDStackView.h */,
+				DF66EB9C20EC9E7C0014BD21 /* FDStackViewExtensions.h */,
+			);
+			path = FDStackView;
+			sourceTree = "<group>";
+		};
 		DF90D41B20BE36CA001F495F = {
 			isa = PBXGroup;
 			children = (
@@ -143,10 +196,15 @@
 				DF90D42B20BE36CA001F495F /* ViewController.m */,
 				DFF9078E20BE994300F58E88 /* OneViewController.h */,
 				DFF9078F20BE994300F58E88 /* OneViewController.m */,
+				DF66EB8A20EC9E120014BD21 /* JZTOrdetailAuditManCell.h */,
+				DF66EB8920EC9E120014BD21 /* JZTOrdetailAuditManCell.m */,
+				DF66EB8620EC9B980014BD21 /* JZTAutoLayoutCell.h */,
+				DF66EB8720EC9B980014BD21 /* JZTAutoLayoutCell.m */,
 				DFC0979220DB98AE007D7939 /* TestPopverView.h */,
 				DFC0979320DB98AE007D7939 /* TestPopverView.m */,
 				DFD5E61F20CE67800079628F /* TestTransitioningDelegate.h */,
 				DFD5E62020CE67800079628F /* TestTransitioningDelegate.m */,
+				DF66EB8C20EC9E7C0014BD21 /* FDStackView */,
 				DF90D42D20BE36CA001F495F /* Main.storyboard */,
 				DF90D43020BE36CC001F495F /* Assets.xcassets */,
 				DF90D43220BE36CC001F495F /* LaunchScreen.storyboard */,
@@ -323,25 +381,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF90D42C20BE36CA001F495F /* ViewController.m in Sources */,
+				DF66EB9E20EC9E7D0014BD21 /* FDLayoutSpacer.m in Sources */,
+				DF66EBA220EC9E7D0014BD21 /* FDStackViewDistributionLayoutArrangement.m in Sources */,
 				DF90D45B20BE38AB001F495F /* JZTTopToBottomTransitioningAnimate.m in Sources */,
 				DF90D46120BE38AB001F495F /* JZTButton.m in Sources */,
+				DF66EBA320EC9E7D0014BD21 /* FDStackViewLayoutArrangement.m in Sources */,
+				DF66EBA120EC9E7D0014BD21 /* FDStackViewAlignmentLayoutArrangement.m in Sources */,
 				DF90D46020BE38AB001F495F /* JZTSegmentPageView.m in Sources */,
+				DF66EBA020EC9E7D0014BD21 /* FDStackViewExtensions.m in Sources */,
 				DF90D46620BE38AB001F495F /* JZTAspectProxy.m in Sources */,
 				DF90D45A20BE38AB001F495F /* JZTPopupTransitioningAnimate.m in Sources */,
 				DFC0979420DB98AE007D7939 /* TestPopverView.m in Sources */,
 				DF90D46320BE38AB001F495F /* JZTToolbar.m in Sources */,
 				DFD5E62920CE77F40079628F /* JZTPresentationController.m in Sources */,
 				DF90D43720BE36CC001F495F /* main.m in Sources */,
+				DF66EBA420EC9E7D0014BD21 /* FDGapLayoutGuide.m in Sources */,
 				DF90D45F20BE38AB001F495F /* JZTUpDownButton.m in Sources */,
 				DF90D45E20BE38AB001F495F /* JZTLeftRightButton.m in Sources */,
 				DFD5E62120CE67800079628F /* TestTransitioningDelegate.m in Sources */,
+				DF66EB8820EC9B980014BD21 /* JZTAutoLayoutCell.m in Sources */,
 				DF90D46420BE38AB001F495F /* JZTScanVC.m in Sources */,
 				DF90D42920BE36CA001F495F /* AppDelegate.m in Sources */,
 				DFF907B820C1438100F58E88 /* JZTRightLeftButton.m in Sources */,
+				DF66EB8B20EC9E130014BD21 /* JZTOrdetailAuditManCell.m in Sources */,
 				DF90D45C20BE38AB001F495F /* JZTNormalTransitioningAnimate.m in Sources */,
 				DF90D45D20BE38AB001F495F /* JZTBadgeButton.m in Sources */,
 				DF90D46520BE38AB001F495F /* JZTScanReadImageVC.m in Sources */,
+				DF66EB9D20EC9E7D0014BD21 /* FDTransformLayer.m in Sources */,
 				DFF9079020BE994300F58E88 /* OneViewController.m in Sources */,
+				DF66EB9F20EC9E7D0014BD21 /* FDStackView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M246FL86B4;
+				DEVELOPMENT_TEAM = X5ZLJJFK53;
 				INFOPLIST_FILE = JZTCustomWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,7 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M246FL86B4;
+				DEVELOPMENT_TEAM = X5ZLJJFK53;
 				INFOPLIST_FILE = JZTCustomWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
